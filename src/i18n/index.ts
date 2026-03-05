@@ -12,6 +12,7 @@ import enCron from './locales/en/cron.json';
 import enSetup from './locales/en/setup.json';
 import enProjects from './locales/en/projects.json';
 import enAgents from './locales/en/agents.json';
+import enTasks from './locales/en/tasks.json';
 
 // PL
 import plCommon from './locales/pl/common.json';
@@ -24,6 +25,7 @@ import plCron from './locales/pl/cron.json';
 import plSetup from './locales/pl/setup.json';
 import plProjects from './locales/pl/projects.json';
 import plAgents from './locales/pl/agents.json';
+import plTasks from './locales/pl/tasks.json';
 
 // ZH
 import zhCommon from './locales/zh/common.json';
@@ -36,6 +38,7 @@ import zhCron from './locales/zh/cron.json';
 import zhSetup from './locales/zh/setup.json';
 import zhProjects from './locales/zh/projects.json';
 import zhAgents from './locales/zh/agents.json';
+import zhTasks from './locales/zh/tasks.json';
 
 // JA
 import jaCommon from './locales/ja/common.json';
@@ -48,6 +51,7 @@ import jaCron from './locales/ja/cron.json';
 import jaSetup from './locales/ja/setup.json';
 import jaProjects from './locales/ja/projects.json';
 import jaAgents from './locales/ja/agents.json';
+import jaTasks from './locales/ja/tasks.json';
 
 export const SUPPORTED_LANGUAGES = [
     { code: 'pl', label: 'Polski' },
@@ -70,6 +74,7 @@ const resources = {
         setup: plSetup,
         projects: plProjects,
         agents: plAgents,
+        tasks: plTasks,
     },
     en: {
         common: enCommon,
@@ -82,6 +87,7 @@ const resources = {
         setup: enSetup,
         projects: enProjects,
         agents: enAgents,
+        tasks: enTasks,
     },
     zh: {
         common: zhCommon,
@@ -94,6 +100,7 @@ const resources = {
         setup: zhSetup,
         projects: zhProjects,
         agents: zhAgents,
+        tasks: zhTasks,
     },
     ja: {
         common: jaCommon,
@@ -106,6 +113,7 @@ const resources = {
         setup: jaSetup,
         projects: jaProjects,
         agents: jaAgents,
+        tasks: jaTasks,
     },
 };
 
@@ -116,7 +124,7 @@ i18n
         lng: 'pl', // Polski jako domyślny język
         fallbackLng: 'en',
         defaultNS: 'common',
-        ns: ['common', 'settings', 'dashboard', 'chat', 'channels', 'skills', 'cron', 'setup', 'projects', 'agents'],
+        ns: ['common', 'settings', 'dashboard', 'chat', 'channels', 'skills', 'cron', 'setup', 'projects', 'agents', 'tasks'],
         interpolation: {
             escapeValue: false,
         },

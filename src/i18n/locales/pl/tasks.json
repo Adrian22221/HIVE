@@ -1,0 +1,30 @@
+{
+    "title": "Zadania",
+    "boardTitle": "Tablica — {{project}}",
+    "addTask": "Dodaj zadanie",
+    "editTask": "Edytuj zadanie",
+    "backToProjects": "← Projekty",
+    "deleteConfirm": "Czy na pewno usunąć to zadanie?",
+    "form": {
+        "title": "Tytuł",
+        "titlePlaceholder": "Np. Napisz post na Instagram...",
+        "description": "Opis",
+        "descriptionPlaceholder": "Opcjonalny opis zadania...",
+        "priority": "Priorytet",
+        "assignAgent": "Przypisz agenta",
+        "noAgent": "— bez agenta —"
+    },
+    "column": {
+        "todo": "Do zrobienia",
+        "inProgress": "W toku",
+        "done": "Gotowe"
+    },
+    "priority": {
+        "low": "Niski",
+        "normal": "Normalny",
+        "high": "Wysoki"
+    },
+    "noTasks": "Brak zadań",
+    "noTasksDesc": "Przeciągnij kartę lub kliknij \"Dodaj zadanie\"",
+    "taskCount": "{{count}} zadań"
+}

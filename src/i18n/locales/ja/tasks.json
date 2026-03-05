@@ -1,0 +1,30 @@
+{
+    "title": "タスク",
+    "boardTitle": "ボード — {{project}}",
+    "addTask": "タスクを追加",
+    "editTask": "タスクを編集",
+    "backToProjects": "← プロジェクト",
+    "deleteConfirm": "このタスクを削除しますか？",
+    "form": {
+        "title": "タイトル",
+        "titlePlaceholder": "例：Instagramの投稿を書く...",
+        "description": "説明",
+        "descriptionPlaceholder": "任意のタスク説明...",
+        "priority": "優先度",
+        "assignAgent": "エージェントを割り当て",
+        "noAgent": "— エージェントなし —"
+    },
+    "column": {
+        "todo": "未着手",
+        "inProgress": "進行中",
+        "done": "完了"
+    },
+    "priority": {
+        "low": "低",
+        "normal": "通常",
+        "high": "高"
+    },
+    "noTasks": "タスクなし",
+    "noTasksDesc": "カードをドラッグするか「タスクを追加」をクリック",
+    "taskCount": "{{count}} 件のタスク"
+}

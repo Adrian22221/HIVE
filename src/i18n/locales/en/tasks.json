@@ -1,0 +1,30 @@
+{
+    "title": "Tasks",
+    "boardTitle": "Board — {{project}}",
+    "addTask": "Add task",
+    "editTask": "Edit task",
+    "backToProjects": "← Projects",
+    "deleteConfirm": "Are you sure you want to delete this task?",
+    "form": {
+        "title": "Title",
+        "titlePlaceholder": "E.g. Write an Instagram post...",
+        "description": "Description",
+        "descriptionPlaceholder": "Optional task description...",
+        "priority": "Priority",
+        "assignAgent": "Assign agent",
+        "noAgent": "— no agent —"
+    },
+    "column": {
+        "todo": "To Do",
+        "inProgress": "In Progress",
+        "done": "Done"
+    },
+    "priority": {
+        "low": "Low",
+        "normal": "Normal",
+        "high": "High"
+    },
+    "noTasks": "No tasks",
+    "noTasksDesc": "Drag a card or click \"Add task\"",
+    "taskCount": "{{count}} tasks"
+}

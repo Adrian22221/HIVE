@@ -9,7 +9,9 @@ import {
   FolderKanban,
   Trash2,
   Pencil,
+  LayoutDashboard,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -334,6 +336,16 @@ export function Projects() {
                       onClick={() => handleOpenEdit(project)}
                     >
                       <Pencil className="h-3.5 w-3.5" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-7 w-7 text-amber-500 hover:text-amber-600 hover:bg-amber-500/10"
+                      asChild
+                    >
+                      <Link to={`/projects/${project.id}/kanban`}>
+                        <LayoutDashboard className="h-3.5 w-3.5" />
+                      </Link>
                     </Button>
                     <Button
                       variant="ghost"

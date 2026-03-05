@@ -1,0 +1,30 @@
+{
+    "title": "任务",
+    "boardTitle": "看板 — {{project}}",
+    "addTask": "添加任务",
+    "editTask": "编辑任务",
+    "backToProjects": "← 项目",
+    "deleteConfirm": "确定要删除此任务吗？",
+    "form": {
+        "title": "标题",
+        "titlePlaceholder": "例如：写一篇Instagram帖子...",
+        "description": "描述",
+        "descriptionPlaceholder": "可选任务描述...",
+        "priority": "优先级",
+        "assignAgent": "分配代理",
+        "noAgent": "— 无代理 —"
+    },
+    "column": {
+        "todo": "待办",
+        "inProgress": "进行中",
+        "done": "完成"
+    },
+    "priority": {
+        "low": "低",
+        "normal": "普通",
+        "high": "高"
+    },
+    "noTasks": "暂无任务",
+    "noTasksDesc": "拖动卡片或点击「添加任务」",
+    "taskCount": "{{count}} 个任务"
+}
