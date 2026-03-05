@@ -12,6 +12,8 @@ import {
   Settings,
   Plus,
   Terminal,
+  FolderKanban,
+  Bot,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,8 +23,33 @@ import { useGatewayStore } from '@/stores/gateway';
 import { useChannelsStore } from '@/stores/channels';
 import { useSkillsStore } from '@/stores/skills';
 import { useSettingsStore } from '@/stores/settings';
+import { useProjectsStore } from '@/stores/projects';
+import { useAgentsStore } from '@/stores/agents';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { useTranslation } from 'react-i18next';
+
+const PLATFORM_ICONS: Record<string, string> = {
+  instagram: '📷',
+  facebook: '📘',
+  youtube: '▶️',
+  tiktok: '🎵',
+  twitter: '𝕏',
+  linkedin: '💼',
+};
+
+const PROJECT_STATUS_COLORS: Record<string, string> = {
+  planning: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+  active: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+  completed: 'bg-green-500/20 text-green-400 border-green-500/30',
+};
+
+const AGENT_STATUS_COLORS: Record<string, string> = {
+  idle: 'bg-slate-500/20 text-slate-400',
+  working: 'bg-amber-500/20 text-amber-400',
+  waiting: 'bg-blue-500/20 text-blue-400',
+  done: 'bg-green-500/20 text-green-400',
+  error: 'bg-red-500/20 text-red-400',
+};
 
 export function Dashboard() {
   const { t } = useTranslation('dashboard');
@@ -30,6 +57,8 @@ export function Dashboard() {
   const { channels, fetchChannels } = useChannelsStore();
   const { skills, fetchSkills } = useSkillsStore();
   const devModeUnlocked = useSettingsStore((state) => state.devModeUnlocked);
+  const { projects } = useProjectsStore();
+  const { agents } = useAgentsStore();
 
   const isGatewayRunning = gatewayStatus.state === 'running';
   const [uptime, setUptime] = useState(0);
@@ -45,6 +74,9 @@ export function Dashboard() {
   // Calculate statistics safely
   const connectedChannels = Array.isArray(channels) ? channels.filter((c) => c.status === 'connected').length : 0;
   const enabledSkills = Array.isArray(skills) ? skills.filter((s) => s.enabled).length : 0;
+  const activeProjects = projects.filter((p) => p.status === 'active').length;
+  const approvedAgents = agents.filter((a) => a.approved).length;
+  const pendingAgents = agents.filter((a) => !a.approved).length;
 
   // Update uptime periodically
   useEffect(() => {
@@ -85,7 +117,7 @@ export function Dashboard() {
   return (
     <div className="space-y-6">
       {/* Status Cards */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {/* Gateway Status */}
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -147,6 +179,36 @@ export function Dashboard() {
             </p>
           </CardContent>
         </Card>
+
+        {/* Projects */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
+            <CardTitle className="text-sm font-medium">{t('projects')}</CardTitle>
+            <FolderKanban className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{projects.length}</div>
+            <p className="text-xs text-muted-foreground">
+              {t('activeOf', { active: activeProjects, total: projects.length })}
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Agents */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
+            <CardTitle className="text-sm font-medium">{t('agents')}</CardTitle>
+            <Bot className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{approvedAgents}</div>
+            <p className="text-xs text-muted-foreground">
+              {pendingAgents > 0
+                ? t('agentsPending', { pending: pendingAgents })
+                : t('approvedOf', { approved: approvedAgents, total: agents.length })}
+            </p>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Quick Actions */}
@@ -156,7 +218,19 @@ export function Dashboard() {
           <CardDescription>{t('quickActions.description')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+            <Button variant="outline" className="h-auto flex-col gap-2 py-4" asChild>
+              <Link to="/projects">
+                <FolderKanban className="h-5 w-5" />
+                <span>{t('quickActions.newProject')}</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-auto flex-col gap-2 py-4" asChild>
+              <Link to="/agents">
+                <Bot className="h-5 w-5" />
+                <span>{t('quickActions.newAgent')}</span>
+              </Link>
+            </Button>
             <Button variant="outline" className="h-auto flex-col gap-2 py-4" asChild>
               <Link to="/channels">
                 <Plus className="h-5 w-5" />
@@ -195,7 +269,96 @@ export function Dashboard() {
         </CardContent>
       </Card>
 
-      {/* Recent Activity */}
+      {/* Projects & Agents */}
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        {/* Recent Projects */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="text-lg">{t('recentProjects')}</CardTitle>
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/projects">{t('viewAll')}</Link>
+            </Button>
+          </CardHeader>
+          <CardContent>
+            {projects.length === 0 ? (
+              <div className="text-center py-8 text-muted-foreground">
+                <FolderKanban className="h-8 w-8 mx-auto mb-2 opacity-50" />
+                <p>{t('noProjects')}</p>
+                <Button variant="link" asChild className="mt-2">
+                  <Link to="/projects">{t('createFirst')}</Link>
+                </Button>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {projects.slice(0, 5).map((project) => (
+                  <div
+                    key={project.id}
+                    className="flex items-center justify-between rounded-lg border p-3"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <p className="font-medium truncate">{project.name}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {project.platforms.map((p) => PLATFORM_ICONS[p]).join(' ')}
+                      </p>
+                    </div>
+                    <span className={`ml-2 shrink-0 inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${PROJECT_STATUS_COLORS[project.status]}`}>
+                      {t(`projectStatus.${project.status}`)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Active Agents */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="text-lg">{t('activeAgents')}</CardTitle>
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/agents">{t('viewAll')}</Link>
+            </Button>
+          </CardHeader>
+          <CardContent>
+            {agents.length === 0 ? (
+              <div className="text-center py-8 text-muted-foreground">
+                <Bot className="h-8 w-8 mx-auto mb-2 opacity-50" />
+                <p>{t('noAgents')}</p>
+                <Button variant="link" asChild className="mt-2">
+                  <Link to="/agents">{t('addFirstAgent')}</Link>
+                </Button>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {agents.filter((a) => a.approved).slice(0, 5).map((agent) => (
+                  <div
+                    key={agent.id}
+                    className="flex items-center gap-3 rounded-lg border p-3"
+                  >
+                    <span className="text-xl shrink-0">{agent.avatar}</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-medium truncate">{agent.name}</p>
+                      <p className="text-xs text-muted-foreground">{agent.model}</p>
+                    </div>
+                    <span className={`shrink-0 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${AGENT_STATUS_COLORS[agent.status]}`}>
+                      {t(`agentStatus.${agent.status}`)}
+                    </span>
+                  </div>
+                ))}
+                {pendingAgents > 0 && (
+                  <Button variant="outline" size="sm" className="w-full border-amber-500/30 text-amber-500" asChild>
+                    <Link to="/agents">
+                      {t('agentsPendingAction', { count: pendingAgents })}
+                    </Link>
+                  </Button>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Channels & Skills */}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {/* Connected Channels */}
         <Card>
