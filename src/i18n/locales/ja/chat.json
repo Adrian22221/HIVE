@@ -15,5 +15,8 @@
         "refresh": "チャットを更新",
         "showThinking": "思考を表示",
         "hideThinking": "思考を非表示"
-    }
+    },
+    "selectAgent": "エージェントを選択",
+    "noAgent": "— エージェントなし —",
+    "agentActive": "エージェント: {{name}}"
 }

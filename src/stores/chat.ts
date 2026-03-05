@@ -4,6 +4,7 @@
  * Communicates with OpenClaw Gateway via gateway:rpc IPC.
  */
 import { create } from 'zustand';
+import { useAgentsStore } from '@/stores/agents';
 
 // ── Types ────────────────────────────────────────────────────────
 
@@ -90,6 +91,9 @@ interface ChatState {
   showThinking: boolean;
   thinkingLevel: string | null;
 
+  // Agent selection
+  selectedAgentId: string | null;
+
   // Actions
   loadSessions: () => Promise<void>;
   switchSession: (key: string) => void;
@@ -101,6 +105,8 @@ interface ChatState {
   toggleThinking: () => void;
   refresh: () => Promise<void>;
   clearError: () => void;
+  setSelectedAgent: (agentId: string | null) => void;
+  selectAgentSession: (agentId: string, agentName: string) => void;
 }
 
 const DEFAULT_CANONICAL_PREFIX = 'agent:main';
@@ -879,6 +885,8 @@ export const useChatStore = create<ChatState>((set, get) => ({
   showThinking: true,
   thinkingLevel: null,
 
+  selectedAgentId: null,
+
   // ── Load sessions via sessions.list ──
 
   loadSessions: async () => {
@@ -1058,7 +1066,16 @@ export const useChatStore = create<ChatState>((set, get) => ({
     const trimmed = text.trim();
     if (!trimmed && (!attachments || attachments.length === 0)) return;
 
-    const { currentSessionKey } = get();
+    const { currentSessionKey, selectedAgentId, messages } = get();
+
+    // On the first message of an agent session, prefix with the agent's system prompt
+    let messageForGateway = trimmed;
+    if (selectedAgentId && messages.length === 0 && trimmed) {
+      const agent = useAgentsStore.getState().getAgent(selectedAgentId);
+      if (agent?.systemPrompt) {
+        messageForGateway = `[System context: ${agent.systemPrompt}]\n\n${trimmed}`;
+      }
+    }
 
     // Add user message optimistically (with local file metadata for UI display)
     const userMsg: RawMessage = {
@@ -1117,7 +1134,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
           'chat:sendWithMedia',
           {
             sessionKey: currentSessionKey,
-            message: trimmed || 'Process the attached file(s).',
+            message: messageForGateway || 'Process the attached file(s).',
             deliver: false,
             idempotencyKey,
             media: attachments.map((a) => ({
@@ -1134,7 +1151,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
           'chat.send',
           {
             sessionKey: currentSessionKey,
-            message: trimmed,
+            message: messageForGateway,
             deliver: false,
             idempotencyKey,
           },
@@ -1435,4 +1452,28 @@ export const useChatStore = create<ChatState>((set, get) => ({
   },
 
   clearError: () => set({ error: null }),
+
+  // ── Agent selection ──
+
+  setSelectedAgent: (agentId: string | null) => {
+    if (agentId === null) {
+      set({ selectedAgentId: null });
+      get().switchSession(DEFAULT_SESSION_KEY);
+    } else {
+      set({ selectedAgentId: agentId });
+    }
+  },
+
+  selectAgentSession: (agentId: string, agentName: string) => {
+    const sessionKey = `agent:main:hive-agent-${agentId}`;
+    const { sessions } = get();
+    const sessionExists = sessions.some((s) => s.key === sessionKey);
+    if (!sessionExists) {
+      set((s) => ({
+        sessions: [...s.sessions, { key: sessionKey, displayName: agentName }],
+      }));
+    }
+    set({ selectedAgentId: agentId });
+    get().switchSession(sessionKey);
+  },
 }));

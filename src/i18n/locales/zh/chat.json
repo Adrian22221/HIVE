@@ -15,5 +15,8 @@
         "refresh": "刷新聊天",
         "showThinking": "显示思考过程",
         "hideThinking": "隐藏思考过程"
-    }
+    },
+    "selectAgent": "选择代理",
+    "noAgent": "— 无代理 —",
+    "agentActive": "代理：{{name}}"
 }

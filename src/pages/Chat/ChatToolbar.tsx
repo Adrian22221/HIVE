@@ -1,12 +1,13 @@
 /**
  * Chat Toolbar
- * Session selector, new session, refresh, and thinking toggle.
+ * Session selector, agent selector, new session, refresh, and thinking toggle.
  * Rendered in the Header when on the Chat page.
  */
 import { RefreshCw, Brain, ChevronDown, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { useChatStore } from '@/stores/chat';
+import { useAgentsStore } from '@/stores/agents';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -19,14 +20,61 @@ export function ChatToolbar() {
   const loading = useChatStore((s) => s.loading);
   const showThinking = useChatStore((s) => s.showThinking);
   const toggleThinking = useChatStore((s) => s.toggleThinking);
+  const selectedAgentId = useChatStore((s) => s.selectedAgentId);
+  const setSelectedAgent = useChatStore((s) => s.setSelectedAgent);
+  const selectAgentSession = useChatStore((s) => s.selectAgentSession);
+
+  const agents = useAgentsStore((s) => s.agents.filter((a) => a.approved));
+
   const { t } = useTranslation('chat');
 
   const handleSessionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     switchSession(e.target.value);
   };
 
+  const handleAgentChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const agentId = e.target.value;
+    if (!agentId) {
+      setSelectedAgent(null);
+    } else {
+      const agent = agents.find((a) => a.id === agentId);
+      if (agent) selectAgentSession(agentId, agent.name);
+    }
+  };
+
+  const selectedAgent = selectedAgentId ? agents.find((a) => a.id === selectedAgentId) : null;
+
   return (
     <div className="flex items-center gap-2">
+      {/* Agent Selector */}
+      {agents.length > 0 && (
+        <div className="relative flex items-center gap-1.5">
+          {selectedAgent && (
+            <span className="text-base leading-none select-none" title={selectedAgent.name}>
+              {selectedAgent.avatar}
+            </span>
+          )}
+          <select
+            value={selectedAgentId ?? ''}
+            onChange={handleAgentChange}
+            className={cn(
+              'appearance-none rounded-md border border-border bg-background px-3 py-1.5 pr-7',
+              'text-sm text-foreground cursor-pointer',
+              'focus:outline-none focus:ring-2 focus:ring-ring',
+              selectedAgentId && 'border-primary/50 bg-primary/5',
+            )}
+          >
+            <option value="">{t('noAgent')}</option>
+            {agents.map((agent) => (
+              <option key={agent.id} value={agent.id}>
+                {agent.avatar} {agent.name}
+              </option>
+            ))}
+          </select>
+          <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 text-muted-foreground pointer-events-none" />
+        </div>
+      )}
+
       {/* Session Selector */}
       <div className="relative">
         <select
@@ -46,7 +94,7 @@ export function ChatToolbar() {
           )}
           {sessions.map((s) => (
             <option key={s.key} value={s.key}>
-              {s.key}
+              {s.displayName ?? s.key}
             </option>
           ))}
         </select>

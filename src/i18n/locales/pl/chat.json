@@ -15,5 +15,8 @@
         "refresh": "Odśwież czat",
         "showThinking": "Pokaż myślenie",
         "hideThinking": "Ukryj myślenie"
-    }
+    },
+    "selectAgent": "Wybierz agenta",
+    "noAgent": "— brak agenta —",
+    "agentActive": "Agent: {{name}}"
 }

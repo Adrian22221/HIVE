@@ -15,5 +15,8 @@
         "refresh": "Refresh chat",
         "showThinking": "Show thinking",
         "hideThinking": "Hide thinking"
-    }
+    },
+    "selectAgent": "Select agent",
+    "noAgent": "— no agent —",
+    "agentActive": "Agent: {{name}}"
 }

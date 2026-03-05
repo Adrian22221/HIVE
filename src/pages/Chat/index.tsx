@@ -9,6 +9,8 @@ import { AlertCircle, Bot, MessageSquare, Sparkles } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useChatStore, type RawMessage } from '@/stores/chat';
 import { useGatewayStore } from '@/stores/gateway';
+import { useAgentsStore } from '@/stores/agents';
+import type { Agent } from '@/types/agent';
 import { LoadingSpinner } from '@/components/common/LoadingSpinner';
 import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
@@ -33,6 +35,10 @@ export function Chat() {
   const sendMessage = useChatStore((s) => s.sendMessage);
   const abortRun = useChatStore((s) => s.abortRun);
   const clearError = useChatStore((s) => s.clearError);
+
+  const selectedAgentId = useChatStore((s) => s.selectedAgentId);
+  const allAgents = useAgentsStore((s) => s.agents);
+  const selectedAgent = selectedAgentId ? allAgents.find((a) => a.id === selectedAgentId) ?? null : null;
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [streamingTimestamp, setStreamingTimestamp] = useState<number>(0);
@@ -109,7 +115,7 @@ export function Chat() {
               <LoadingSpinner size="lg" />
             </div>
           ) : messages.length === 0 && !sending ? (
-            <WelcomeScreen />
+            selectedAgent ? <AgentPersonaCard agent={selectedAgent} /> : <WelcomeScreen />
           ) : (
             <>
               {messages.map((msg, idx) => (
@@ -210,6 +216,31 @@ function WelcomeScreen() {
           </Card>
         ))}
       </div>
+    </div>
+  );
+}
+
+// ── Agent Persona Card ───────────────────────────────────────────
+
+function AgentPersonaCard({ agent }: { agent: Agent }) {
+  const { t } = useTranslation('chat');
+  return (
+    <div className="flex flex-col items-center justify-center text-center py-20">
+      <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 text-5xl bg-muted select-none">
+        {agent.avatar}
+      </div>
+      <h2 className="text-2xl font-bold mb-1">{agent.name}</h2>
+      <p className="text-sm text-primary/80 capitalize mb-3">{agent.role}</p>
+      {agent.systemPrompt && (
+        <p className="text-muted-foreground text-sm max-w-md leading-relaxed">
+          {agent.systemPrompt.length > 200
+            ? `${agent.systemPrompt.slice(0, 200)}…`
+            : agent.systemPrompt}
+        </p>
+      )}
+      <p className="text-xs text-muted-foreground/50 mt-6">
+        {t('agentActive', { name: agent.name })}
+      </p>
     </div>
   );
 }
