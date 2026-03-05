@@ -1,0 +1,44 @@
+{
+    "title": "プロジェクト",
+    "description": "ソーシャルメディアプロジェクトを管理",
+    "newProject": "新規プロジェクト",
+    "noProjects": "プロジェクトなし",
+    "noProjectsDesc": "最初のプロジェクトを作成して、ソーシャルメディアコンテンツの管理を始めましょう。",
+    "createProject": "プロジェクト作成",
+    "editProject": "プロジェクト編集",
+    "deleteProject": "プロジェクト削除",
+    "deleteConfirm": "このプロジェクトを削除してもよろしいですか？",
+    "created": "作成日",
+    "form": {
+        "name": "プロジェクト名",
+        "namePlaceholder": "例：ブランドX — ソーシャルメディア",
+        "description": "説明",
+        "descriptionPlaceholder": "プロジェクトの簡単な説明...",
+        "workspacePath": "ワークスペースフォルダ",
+        "workspacePathPlaceholder": "例：C:/Users/Adrian/Documents/Projects/BrandX",
+        "publishMode": "公開モード",
+        "publishModeManual": "手動 — 各投稿を承認する",
+        "publishModeSemiAuto": "半自動 — 承認後にAIが投稿",
+        "publishModeAuto": "全自動 — AIが独立して動作",
+        "platforms": "ソーシャルメディアプラットフォーム",
+        "status": "プロジェクトステータス"
+    },
+    "status": {
+        "planning": "計画中",
+        "active": "進行中",
+        "completed": "完了"
+    },
+    "publishMode": {
+        "manual": "手動",
+        "semi-auto": "半自動",
+        "auto": "自動"
+    },
+    "platforms": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "twitter": "X (Twitter)",
+        "linkedin": "LinkedIn"
+    }
+}

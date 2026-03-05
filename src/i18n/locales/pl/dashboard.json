@@ -1,0 +1,28 @@
+{
+    "gateway": "Gateway",
+    "channels": "Kanały",
+    "skills": "Umiejętności",
+    "uptime": "Czas działania",
+    "port": "Port: {{port}}",
+    "pid": "PID: {{pid}}",
+    "connectedOf": "{{connected}} z {{total}} połączonych",
+    "enabledOf": "{{enabled}} z {{total}} włączonych",
+    "sinceRestart": "Od ostatniego restartu",
+    "gatewayNotRunning": "Gateway nie działa",
+    "quickActions": {
+        "title": "Szybkie akcje",
+        "description": "Typowe zadania i skróty",
+        "addChannel": "Dodaj kanał",
+        "browseSkills": "Przeglądaj umiejętności",
+        "openChat": "Otwórz czat",
+        "settings": "Ustawienia",
+        "devConsole": "Konsola deweloperska"
+    },
+    "connectedChannels": "Połączone kanały",
+    "noChannels": "Brak skonfigurowanych kanałów",
+    "addFirst": "Dodaj pierwszy kanał",
+    "activeSkills": "Aktywne umiejętności",
+    "noSkills": "Brak włączonych umiejętności",
+    "enableSome": "Włącz kilka umiejętności",
+    "more": "+{{count}} więcej"
+}

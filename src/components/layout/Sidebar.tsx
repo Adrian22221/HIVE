@@ -1,7 +1,7 @@
 /**
- * Sidebar Component
- * Navigation sidebar with menu items.
- * No longer fixed - sits inside the flex layout below the title bar.
+ * Komponent Sidebar
+ * Nawigacja boczna z pozycjami menu — zmodyfikowana dla projektu HIVE.
+ * Dodano moduły: Projekty i Agenci.
  */
 import { NavLink } from 'react-router-dom';
 import {
@@ -15,6 +15,8 @@ import {
   ChevronRight,
   Terminal,
   ExternalLink,
+  FolderKanban,
+  Bot,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useSettingsStore } from '@/stores/settings';
@@ -86,6 +88,8 @@ export function Sidebar() {
 
   const navItems = [
     { to: '/', icon: <MessageSquare className="h-5 w-5" />, label: t('sidebar.chat') },
+    { to: '/projects', icon: <FolderKanban className="h-5 w-5" />, label: t('sidebar.projects') },
+    { to: '/agents', icon: <Bot className="h-5 w-5" />, label: t('sidebar.agents') },
     { to: '/cron', icon: <Clock className="h-5 w-5" />, label: t('sidebar.cronTasks') },
     { to: '/skills', icon: <Puzzle className="h-5 w-5" />, label: t('sidebar.skills') },
     { to: '/channels', icon: <Radio className="h-5 w-5" />, label: t('sidebar.channels') },
@@ -100,7 +104,7 @@ export function Sidebar() {
         sidebarCollapsed ? 'w-16' : 'w-64'
       )}
     >
-      {/* Navigation */}
+      {/* Nawigacja */}
       <nav className="flex-1 space-y-1 overflow-auto p-2">
         {navItems.map((item) => (
           <NavItem
@@ -111,7 +115,7 @@ export function Sidebar() {
         ))}
       </nav>
 
-      {/* Footer */}
+      {/* Stopka */}
       <div className="p-2 space-y-2">
         {devModeUnlocked && !sidebarCollapsed && (
           <Button

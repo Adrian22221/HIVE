@@ -1,0 +1,70 @@
+{
+    "title": "Umiejętności",
+    "subtitle": "Przeglądaj i zarządzaj możliwościami AI",
+    "refresh": "Odśwież",
+    "openFolder": "Otwórz folder umiejętności",
+    "gatewayWarning": "Gateway nie działa. Umiejętności nie mogą być załadowane bez aktywnego Gateway.",
+    "tabs": {
+        "installed": "Zainstalowane",
+        "marketplace": "Rynek"
+    },
+    "filter": {
+        "all": "Wszystkie ({{count}})",
+        "builtIn": "Wbudowane ({{count}})",
+        "marketplace": "Rynek ({{count}})"
+    },
+    "search": "Szukaj umiejętności...",
+    "searchMarketplace": "Szukaj na rynku...",
+    "searchButton": "Szukaj",
+    "noSkills": "Nie znaleziono umiejętności",
+    "noSkillsSearch": "Spróbuj innego wyszukiwania",
+    "noSkillsAvailable": "Brak dostępnych umiejętności",
+    "detail": {
+        "info": "Informacje",
+        "config": "Konfiguracja",
+        "description": "Opis",
+        "version": "Wersja",
+        "author": "Autor",
+        "source": "Źródło",
+        "coreSystem": "System podstawowy",
+        "bundled": "Dołączona",
+        "userInstalled": "Zainstalowana przez użytkownika",
+        "enabled": "Włączona",
+        "disabled": "Wyłączona",
+        "apiKey": "Klucz API",
+        "apiKeyPlaceholder": "Wprowadź klucz API (opcjonalnie)",
+        "apiKeyDesc": "Główny klucz API dla tej umiejętności. Zostaw puste jeśli nie jest wymagany.",
+        "envVars": "Zmienne środowiskowe",
+        "addVariable": "Dodaj zmienną",
+        "noEnvVars": "Brak skonfigurowanych zmiennych środowiskowych.",
+        "keyPlaceholder": "KLUCZ (np. BASE_URL)",
+        "valuePlaceholder": "WARTOŚĆ",
+        "envNote": "Uwaga: Wiersze z pustymi kluczami zostaną automatycznie usunięte podczas zapisywania.",
+        "saving": "Zapisywanie...",
+        "saveConfig": "Zapisz konfigurację",
+        "configSaved": "Konfiguracja zapisana",
+        "openManual": "Otwórz podręcznik",
+        "configurable": "Konfigurowalna"
+    },
+    "toast": {
+        "enabled": "Umiejętność włączona",
+        "disabled": "Umiejętność wyłączona",
+        "installed": "Umiejętność zainstalowana i włączona",
+        "uninstalled": "Umiejętność odinstalowana pomyślnie",
+        "openedEditor": "Otwarto w edytorze",
+        "failedEditor": "Nie udało się otworzyć edytora",
+        "failedSave": "Nie udało się zapisać konfiguracji",
+        "failedOpenFolder": "Nie udało się otworzyć folderu umiejętności",
+        "failedInstall": "Instalacja nie powiodła się",
+        "failedUninstall": "Odinstalowanie nie powiodło się",
+        "failedFolderNotFound": "Folder umiejętności nie istnieje. Najpierw zainstaluj umiejętność."
+    },
+    "marketplace": {
+        "title": "Rynek",
+        "securityNote": "Kliknij kartę umiejętności aby zobaczyć dokumentację i informacje bezpieczeństwa przed instalacją.",
+        "searching": "Szukam na ClawHub...",
+        "noResults": "Nie znaleziono umiejętności pasujących do wyszukiwania.",
+        "emptyPrompt": "Szukaj nowych umiejętności aby rozszerzyć możliwości.",
+        "searchError": "Wyszukiwanie ClawHub nie powiodło się. Sprawdź połączenie."
+    }
+}

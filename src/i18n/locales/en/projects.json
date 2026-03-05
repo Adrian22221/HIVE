@@ -1,0 +1,44 @@
+{
+    "title": "Projects",
+    "description": "Manage your social media projects",
+    "newProject": "New Project",
+    "noProjects": "No Projects",
+    "noProjectsDesc": "Create your first project to start managing social media content.",
+    "createProject": "Create Project",
+    "editProject": "Edit Project",
+    "deleteProject": "Delete Project",
+    "deleteConfirm": "Are you sure you want to delete this project?",
+    "created": "Created",
+    "form": {
+        "name": "Project Name",
+        "namePlaceholder": "e.g. Brand X — Social Media",
+        "description": "Description",
+        "descriptionPlaceholder": "Short project description...",
+        "workspacePath": "Workspace Folder",
+        "workspacePathPlaceholder": "e.g. C:/Users/Adrian/Documents/Projects/BrandX",
+        "publishMode": "Publish Mode",
+        "publishModeManual": "Manual — you approve each publication",
+        "publishModeSemiAuto": "Semi-auto — you approve, agent publishes",
+        "publishModeAuto": "Full automation — agent works independently",
+        "platforms": "Social Media Platforms",
+        "status": "Project Status"
+    },
+    "status": {
+        "planning": "Planning",
+        "active": "Active",
+        "completed": "Completed"
+    },
+    "publishMode": {
+        "manual": "Manual",
+        "semi-auto": "Semi-auto",
+        "auto": "Automatic"
+    },
+    "platforms": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "twitter": "X (Twitter)",
+        "linkedin": "LinkedIn"
+    }
+}

@@ -1,6 +1,8 @@
 {
     "sidebar": {
         "chat": "チャット",
+        "projects": "プロジェクト",
+        "agents": "エージェント",
         "cronTasks": "定期タスク",
         "skills": "スキル",
         "channels": "チャンネル",

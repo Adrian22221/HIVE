@@ -1,0 +1,50 @@
+{
+    "title": "Agents",
+    "description": "Manage your AI agents",
+    "newAgent": "New Agent",
+    "noAgents": "No Agents",
+    "noAgentsDesc": "Create your first AI agent to automate social media content creation.",
+    "createAgent": "Create Agent",
+    "editAgent": "Edit Agent",
+    "deleteAgent": "Delete Agent",
+    "deleteConfirm": "Are you sure you want to delete this agent?",
+    "approveAgent": "Approve",
+    "pendingApproval": "Pending Approval",
+    "form": {
+        "name": "Agent Name",
+        "namePlaceholder": "e.g. Content Agent",
+        "avatar": "Avatar (emoji)",
+        "avatarPlaceholder": "🤖",
+        "role": "Role",
+        "systemPrompt": "System Prompt",
+        "systemPromptPlaceholder": "Instructions for the agent — describe its role and tasks...",
+        "provider": "AI Provider",
+        "model": "AI Model",
+        "ollamaModel": "Ollama Model",
+        "assignedProject": "Assigned Project"
+    },
+    "role": {
+        "orchestrator": "Orchestrator",
+        "content": "Content",
+        "graphics": "Graphics",
+        "publisher": "Publisher",
+        "analytics": "Analytics",
+        "custom": "Custom"
+    },
+    "status": {
+        "idle": "Idle",
+        "working": "Working",
+        "waiting": "Waiting",
+        "done": "Done",
+        "error": "Error"
+    },
+    "provider": {
+        "anthropic": "Anthropic (Claude)",
+        "openai": "OpenAI (GPT)",
+        "ollama": "Ollama (Local)"
+    },
+    "createdBy": {
+        "user": "By user",
+        "agent": "By agent"
+    }
+}

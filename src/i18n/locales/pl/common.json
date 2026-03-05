@@ -1,0 +1,53 @@
+{
+    "sidebar": {
+        "chat": "Czat",
+        "cronTasks": "Harmonogram",
+        "skills": "Umiejętności",
+        "channels": "Kanały",
+        "dashboard": "Panel główny",
+        "settings": "Ustawienia",
+        "devConsole": "Konsola deweloperska",
+        "projects": "Projekty",
+        "agents": "Agenci"
+    },
+    "actions": {
+        "save": "Zapisz",
+        "cancel": "Anuluj",
+        "delete": "Usuń",
+        "edit": "Edytuj",
+        "refresh": "Odśwież",
+        "close": "Zamknij",
+        "copy": "Kopiuj",
+        "search": "Szukaj",
+        "confirm": "Potwierdź",
+        "dismiss": "Odrzuć",
+        "load": "Wczytaj",
+        "install": "Zainstaluj",
+        "uninstall": "Odinstaluj",
+        "enable": "Włącz",
+        "disable": "Wyłącz",
+        "back": "Wstecz",
+        "next": "Dalej",
+        "skip": "Pomiń",
+        "restart": "Uruchom ponownie"
+    },
+    "status": {
+        "running": "Działa",
+        "stopped": "Zatrzymany",
+        "error": "Błąd",
+        "connected": "Połączony",
+        "disconnected": "Rozłączony",
+        "enabled": "Włączony",
+        "disabled": "Wyłączony",
+        "active": "Aktywny",
+        "paused": "Wstrzymany",
+        "configured": "Skonfigurowany",
+        "loading": "Ładowanie...",
+        "saving": "Zapisywanie..."
+    },
+    "gateway": {
+        "notRunning": "Gateway nie działa",
+        "notRunningDesc": "OpenClaw Gateway musi być uruchomiony aby korzystać z tej funkcji. Uruchomi się automatycznie lub możesz go uruchomić z Ustawień.",
+        "warning": "Gateway nie jest uruchomiony."
+    }
+}

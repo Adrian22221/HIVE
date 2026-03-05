@@ -1,0 +1,44 @@
+{
+    "title": "项目",
+    "description": "管理社交媒体项目",
+    "newProject": "新建项目",
+    "noProjects": "暂无项目",
+    "noProjectsDesc": "创建您的第一个项目，开始管理社交媒体内容。",
+    "createProject": "创建项目",
+    "editProject": "编辑项目",
+    "deleteProject": "删除项目",
+    "deleteConfirm": "确定要删除此项目吗？",
+    "created": "创建于",
+    "form": {
+        "name": "项目名称",
+        "namePlaceholder": "例如：品牌X — 社交媒体",
+        "description": "描述",
+        "descriptionPlaceholder": "项目简短描述...",
+        "workspacePath": "工作区文件夹",
+        "workspacePathPlaceholder": "例如：C:/Users/Adrian/Documents/Projects/BrandX",
+        "publishMode": "发布模式",
+        "publishModeManual": "手动 — 您审批每次发布",
+        "publishModeSemiAuto": "半自动 — 您审批，AI发布",
+        "publishModeAuto": "全自动 — AI独立运行",
+        "platforms": "社交媒体平台",
+        "status": "项目状态"
+    },
+    "status": {
+        "planning": "规划中",
+        "active": "进行中",
+        "completed": "已完成"
+    },
+    "publishMode": {
+        "manual": "手动",
+        "semi-auto": "半自动",
+        "auto": "自动"
+    },
+    "platforms": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "twitter": "X (Twitter)",
+        "linkedin": "LinkedIn"
+    }
+}

@@ -1,6 +1,8 @@
 {
     "sidebar": {
         "chat": "Chat",
+        "projects": "Projects",
+        "agents": "Agents",
         "cronTasks": "Cron Tasks",
         "skills": "Skills",
         "channels": "Channels",

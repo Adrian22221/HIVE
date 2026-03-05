@@ -1,0 +1,70 @@
+{
+    "title": "Zaplanowane zadania",
+    "subtitle": "Automatyzuj przepływy AI za pomocą zaplanowanych zadań",
+    "newTask": "Nowe zadanie",
+    "refresh": "Odśwież",
+    "gatewayWarning": "Gateway nie działa. Zaplanowane zadania nie mogą być zarządzane bez aktywnego Gateway.",
+    "stats": {
+        "total": "Wszystkie zadania",
+        "active": "Aktywne",
+        "paused": "Wstrzymane",
+        "failed": "Nieudane"
+    },
+    "empty": {
+        "title": "Brak zaplanowanych zadań",
+        "description": "Twórz zaplanowane zadania aby automatyzować przepływy AI. Zadania mogą wysyłać wiadomości, uruchamiać zapytania lub wykonywać akcje o określonych porach.",
+        "create": "Utwórz pierwsze zadanie"
+    },
+    "card": {
+        "runNow": "Uruchom teraz",
+        "deleteConfirm": "Czy na pewno chcesz usunąć to zadanie?",
+        "last": "Ostatnie",
+        "next": "Następne"
+    },
+    "dialog": {
+        "createTitle": "Utwórz zadanie",
+        "editTitle": "Edytuj zadanie",
+        "description": "Zaplanuj automatyczne zadanie AI",
+        "taskName": "Nazwa zadania",
+        "taskNamePlaceholder": "np. Poranny briefing",
+        "message": "Wiadomość / Polecenie",
+        "messagePlaceholder": "Co ma zrobić AI? np. Daj mi podsumowanie dzisiejszych wiadomości i pogody",
+        "schedule": "Harmonogram",
+        "cronPlaceholder": "Wyrażenie cron (np. 0 9 * * *)",
+        "usePresets": "Użyj presetów",
+        "useCustomCron": "Użyj własnego crona",
+        "targetChannel": "Docelowy kanał",
+        "noChannels": "Brak dostępnych kanałów. Najpierw dodaj kanał.",
+        "discordChannelId": "ID kanału Discord",
+        "discordChannelIdPlaceholder": "np. 1438452657525100686",
+        "discordChannelIdDesc": "Kliknij prawym na kanał Discord → Kopiuj ID kanału",
+        "enableImmediately": "Włącz natychmiast",
+        "enableImmediatelyDesc": "Uruchom to zadanie po utworzeniu",
+        "saveChanges": "Zapisz zmiany"
+    },
+    "presets": {
+        "everyMinute": "Co minutę",
+        "every5Min": "Co 5 minut",
+        "every15Min": "Co 15 minut",
+        "everyHour": "Co godzinę",
+        "daily9am": "Codziennie o 9:00",
+        "daily6pm": "Codziennie o 18:00",
+        "weeklyMon": "Co tydzień (Pon 9:00)",
+        "monthly1st": "Co miesiąc (1. o 9:00)"
+    },
+    "toast": {
+        "created": "Zadanie utworzone",
+        "updated": "Zadanie zaktualizowane",
+        "enabled": "Zadanie włączone",
+        "paused": "Zadanie wstrzymane",
+        "deleted": "Zadanie usunięte",
+        "triggered": "Zadanie uruchomione pomyślnie",
+        "failedUpdate": "Nie udało się zaktualizować zadania",
+        "failedDelete": "Nie udało się usunąć zadania",
+        "nameRequired": "Wprowadź nazwę zadania",
+        "messageRequired": "Wprowadź wiadomość",
+        "channelRequired": "Wybierz kanał",
+        "discordIdRequired": "Wprowadź ID kanału Discord",
+        "scheduleRequired": "Wybierz lub wprowadź harmonogram"
+    }
+}

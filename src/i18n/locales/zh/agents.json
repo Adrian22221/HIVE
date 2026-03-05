@@ -1,0 +1,50 @@
+{
+    "title": "AI代理",
+    "description": "管理您的AI代理",
+    "newAgent": "新建代理",
+    "noAgents": "暂无代理",
+    "noAgentsDesc": "创建您的第一个AI代理，自动化社交媒体内容创建。",
+    "createAgent": "创建代理",
+    "editAgent": "编辑代理",
+    "deleteAgent": "删除代理",
+    "deleteConfirm": "确定要删除此代理吗？",
+    "approveAgent": "批准",
+    "pendingApproval": "待批准",
+    "form": {
+        "name": "代理名称",
+        "namePlaceholder": "例如：内容代理",
+        "avatar": "头像（表情符号）",
+        "avatarPlaceholder": "🤖",
+        "role": "角色",
+        "systemPrompt": "系统提示词",
+        "systemPromptPlaceholder": "代理的指令...",
+        "provider": "AI提供商",
+        "model": "AI模型",
+        "ollamaModel": "Ollama模型",
+        "assignedProject": "分配项目"
+    },
+    "role": {
+        "orchestrator": "编排者",
+        "content": "内容",
+        "graphics": "图形",
+        "publisher": "发布",
+        "analytics": "分析",
+        "custom": "自定义"
+    },
+    "status": {
+        "idle": "空闲",
+        "working": "工作中",
+        "waiting": "等待中",
+        "done": "完成",
+        "error": "错误"
+    },
+    "provider": {
+        "anthropic": "Anthropic (Claude)",
+        "openai": "OpenAI (GPT)",
+        "ollama": "Ollama (本地)"
+    },
+    "createdBy": {
+        "user": "用户创建",
+        "agent": "代理创建"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "title": "エージェント",
+    "description": "AIエージェントを管理",
+    "newAgent": "新規エージェント",
+    "noAgents": "エージェントなし",
+    "noAgentsDesc": "最初のAIエージェントを作成して、ソーシャルメディアコンテンツの作成を自動化しましょう。",
+    "createAgent": "エージェント作成",
+    "editAgent": "エージェント編集",
+    "deleteAgent": "エージェント削除",
+    "deleteConfirm": "このエージェントを削除してもよろしいですか？",
+    "approveAgent": "承認",
+    "pendingApproval": "承認待ち",
+    "form": {
+        "name": "エージェント名",
+        "namePlaceholder": "例：コンテンツエージェント",
+        "avatar": "アバター（絵文字）",
+        "avatarPlaceholder": "🤖",
+        "role": "役割",
+        "systemPrompt": "システムプロンプト",
+        "systemPromptPlaceholder": "エージェントへの指示...",
+        "provider": "AIプロバイダー",
+        "model": "AIモデル",
+        "ollamaModel": "Ollamaモデル",
+        "assignedProject": "割り当てプロジェクト"
+    },
+    "role": {
+        "orchestrator": "オーケストレーター",
+        "content": "コンテンツ",
+        "graphics": "グラフィック",
+        "publisher": "パブリッシャー",
+        "analytics": "アナリティクス",
+        "custom": "カスタム"
+    },
+    "status": {
+        "idle": "待機中",
+        "working": "作業中",
+        "waiting": "待機",
+        "done": "完了",
+        "error": "エラー"
+    },
+    "provider": {
+        "anthropic": "Anthropic (Claude)",
+        "openai": "OpenAI (GPT)",
+        "ollama": "Ollama (ローカル)"
+    },
+    "createdBy": {
+        "user": "ユーザー作成",
+        "agent": "エージェント作成"
+    }
+}

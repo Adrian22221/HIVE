@@ -1,0 +1,136 @@
+{
+    "title": "Ustawienia",
+    "subtitle": "Skonfiguruj swoje doświadczenie z HIVE",
+    "appearance": {
+        "title": "Wygląd",
+        "description": "Dostosuj wygląd aplikacji",
+        "theme": "Motyw",
+        "light": "Jasny",
+        "dark": "Ciemny",
+        "system": "Systemowy",
+        "language": "Język"
+    },
+    "aiProviders": {
+        "title": "Dostawcy AI",
+        "description": "Skonfiguruj dostawców modeli AI i klucze API",
+        "add": "Dodaj dostawcę",
+        "custom": "Niestandardowy",
+        "notRequired": "Nie wymagany",
+        "empty": {
+            "title": "Brak skonfigurowanych dostawców",
+            "desc": "Dodaj dostawcę AI aby zacząć używać HIVE",
+            "cta": "Dodaj pierwszego dostawcę"
+        },
+        "dialog": {
+            "title": "Dodaj dostawcę AI",
+            "desc": "Skonfiguruj nowego dostawcę modelu AI",
+            "displayName": "Nazwa wyświetlana",
+            "apiKey": "Klucz API",
+            "apiKeyStored": "Twój klucz API jest przechowywany lokalnie na Twoim komputerze.",
+            "baseUrl": "Bazowy URL",
+            "modelId": "ID modelu",
+            "cancel": "Anuluj",
+            "change": "Zmień dostawcę",
+            "add": "Dodaj dostawcę",
+            "save": "Zapisz",
+            "validate": "Zweryfikuj"
+        },
+        "card": {
+            "default": "Domyślny",
+            "configured": "Skonfigurowany",
+            "noKey": "Brak klucza API",
+            "setDefault": "Ustaw jako domyślny",
+            "editKey": "Edytuj klucz API",
+            "delete": "Usuń dostawcę"
+        },
+        "toast": {
+            "added": "Dostawca dodany pomyślnie",
+            "failedAdd": "Nie udało się dodać dostawcy",
+            "deleted": "Dostawca usunięty",
+            "failedDelete": "Nie udało się usunąć dostawcy",
+            "defaultUpdated": "Domyślny dostawca zaktualizowany",
+            "failedDefault": "Nie udało się ustawić domyślnego",
+            "updated": "Dostawca zaktualizowany",
+            "failedUpdate": "Nie udało się zaktualizować dostawcy",
+            "invalidKey": "Nieprawidłowy klucz API",
+            "modelRequired": "ID modelu jest wymagane"
+        }
+    },
+    "gateway": {
+        "title": "Gateway",
+        "description": "Ustawienia OpenClaw Gateway",
+        "status": "Status",
+        "port": "Port",
+        "logs": "Logi",
+        "appLogs": "Logi aplikacji",
+        "openFolder": "Otwórz folder",
+        "autoStart": "Auto-start Gateway",
+        "autoStartDesc": "Uruchom Gateway gdy HIVE się uruchamia"
+    },
+    "updates": {
+        "title": "Aktualizacje",
+        "description": "Trzymaj HIVE na bieżąco",
+        "autoCheck": "Automatycznie sprawdzaj aktualizacje",
+        "autoCheckDesc": "Sprawdzaj aktualizacje przy uruchomieniu",
+        "autoDownload": "Automatycznie pobieraj aktualizacje",
+        "autoDownloadDesc": "Pobieraj aktualizacje w tle",
+        "status": {
+            "checking": "Sprawdzanie aktualizacji...",
+            "downloading": "Pobieranie aktualizacji...",
+            "available": "Dostępna aktualizacja: v{{version}}",
+            "downloaded": "Gotowa do instalacji: v{{version}}",
+            "failed": "Sprawdzanie aktualizacji nie powiodło się",
+            "latest": "Masz najnowszą wersję",
+            "check": "Sprawdź aktualizacje aby uzyskać najnowsze funkcje"
+        },
+        "action": {
+            "checking": "Sprawdzanie...",
+            "downloading": "Pobieranie...",
+            "download": "Pobierz aktualizację",
+            "install": "Zainstaluj i uruchom ponownie",
+            "retry": "Spróbuj ponownie",
+            "check": "Sprawdź aktualizacje"
+        },
+        "currentVersion": "Aktualna wersja",
+        "whatsNew": "Co nowego:",
+        "errorDetails": "Szczegóły błędu:",
+        "help": "Aktualizacje są pobierane w tle i instalowane po restarcie aplikacji."
+    },
+    "advanced": {
+        "title": "Zaawansowane",
+        "description": "Opcje dla zaawansowanych użytkowników",
+        "devMode": "Tryb deweloperski",
+        "devModeDesc": "Pokaż narzędzia deweloperskie i skróty"
+    },
+    "developer": {
+        "title": "Deweloper",
+        "description": "Zaawansowane opcje dla deweloperów",
+        "console": "Konsola OpenClaw",
+        "consoleDesc": "Dostęp do natywnego interfejsu zarządzania OpenClaw",
+        "openConsole": "Otwórz konsolę deweloperską",
+        "consoleNote": "Otwiera Control UI z wstrzykniętym tokenem gateway",
+        "gatewayToken": "Token Gateway",
+        "gatewayTokenDesc": "Wklej to do ustawień Control UI jeśli zostaniesz o to poproszony",
+        "tokenUnavailable": "Token niedostępny",
+        "tokenCopied": "Token gateway skopiowany",
+        "cli": "OpenClaw CLI",
+        "cliDesc": "Skopiuj komendę do uruchomienia OpenClaw bez modyfikowania PATH.",
+        "cliPowershell": "Komenda PowerShell.",
+        "cmdUnavailable": "Komenda niedostępna",
+        "cmdCopied": "Komenda CLI skopiowana",
+        "installCmd": "Zainstaluj komendę \"openclaw\"",
+        "installCmdDesc": "Instaluje ~/.local/bin/openclaw (bez uprawnień admina)",
+        "installTitle": "Zainstaluj komendę OpenClaw",
+        "installMessage": "Zainstalować komendę \"openclaw\"?",
+        "installDetail": "Stworzy ~/.local/bin/openclaw. Upewnij się że ~/.local/bin jest w PATH jeśli chcesz uruchamiać globalnie."
+    },
+    "about": {
+        "title": "O aplikacji",
+        "appName": "HIVE",
+        "tagline": "Hierarchical Intelligence & Vision Engine",
+        "basedOn": "Oparty na OpenClaw",
+        "version": "Wersja {{version}}",
+        "docs": "Strona internetowa",
+        "github": "GitHub"
+    }
+}

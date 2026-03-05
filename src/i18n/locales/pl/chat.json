@@ -1,0 +1,19 @@
+{
+    "gatewayNotRunning": "Gateway nie działa",
+    "gatewayRequired": "OpenClaw Gateway musi być uruchomiony aby korzystać z czatu. Uruchomi się automatycznie lub możesz go uruchomić z Ustawień.",
+    "welcome": {
+        "title": "HIVE Czat",
+        "subtitle": "Twój asystent AI jest gotowy. Rozpocznij rozmowę poniżej.",
+        "askQuestions": "Zadaj pytania",
+        "askQuestionsDesc": "Uzyskaj odpowiedzi na każdy temat",
+        "creativeTasks": "Zadania kreatywne",
+        "creativeTasksDesc": "Pisanie, burza mózgów, pomysły"
+    },
+    "noLogs": "(Brak dostępnych logów)",
+    "toolbar": {
+        "newSession": "Nowa sesja",
+        "refresh": "Odśwież czat",
+        "showThinking": "Pokaż myślenie",
+        "hideThinking": "Ukryj myślenie"
+    }
+}

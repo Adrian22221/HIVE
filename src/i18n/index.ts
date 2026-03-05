@@ -10,6 +10,20 @@ import enChannels from './locales/en/channels.json';
 import enSkills from './locales/en/skills.json';
 import enCron from './locales/en/cron.json';
 import enSetup from './locales/en/setup.json';
+import enProjects from './locales/en/projects.json';
+import enAgents from './locales/en/agents.json';
+
+// PL
+import plCommon from './locales/pl/common.json';
+import plSettings from './locales/pl/settings.json';
+import plDashboard from './locales/pl/dashboard.json';
+import plChat from './locales/pl/chat.json';
+import plChannels from './locales/pl/channels.json';
+import plSkills from './locales/pl/skills.json';
+import plCron from './locales/pl/cron.json';
+import plSetup from './locales/pl/setup.json';
+import plProjects from './locales/pl/projects.json';
+import plAgents from './locales/pl/agents.json';
 
 // ZH
 import zhCommon from './locales/zh/common.json';
@@ -20,6 +34,8 @@ import zhChannels from './locales/zh/channels.json';
 import zhSkills from './locales/zh/skills.json';
 import zhCron from './locales/zh/cron.json';
 import zhSetup from './locales/zh/setup.json';
+import zhProjects from './locales/zh/projects.json';
+import zhAgents from './locales/zh/agents.json';
 
 // JA
 import jaCommon from './locales/ja/common.json';
@@ -30,8 +46,11 @@ import jaChannels from './locales/ja/channels.json';
 import jaSkills from './locales/ja/skills.json';
 import jaCron from './locales/ja/cron.json';
 import jaSetup from './locales/ja/setup.json';
+import jaProjects from './locales/ja/projects.json';
+import jaAgents from './locales/ja/agents.json';
 
 export const SUPPORTED_LANGUAGES = [
+    { code: 'pl', label: 'Polski' },
     { code: 'en', label: 'English' },
     { code: 'zh', label: '中文' },
     { code: 'ja', label: '日本語' },
@@ -40,6 +59,18 @@ export const SUPPORTED_LANGUAGES = [
 export type LanguageCode = (typeof SUPPORTED_LANGUAGES)[number]['code'];
 
 const resources = {
+    pl: {
+        common: plCommon,
+        settings: plSettings,
+        dashboard: plDashboard,
+        chat: plChat,
+        channels: plChannels,
+        skills: plSkills,
+        cron: plCron,
+        setup: plSetup,
+        projects: plProjects,
+        agents: plAgents,
+    },
     en: {
         common: enCommon,
         settings: enSettings,
@@ -49,6 +80,8 @@ const resources = {
         skills: enSkills,
         cron: enCron,
         setup: enSetup,
+        projects: enProjects,
+        agents: enAgents,
     },
     zh: {
         common: zhCommon,
@@ -59,6 +92,8 @@ const resources = {
         skills: zhSkills,
         cron: zhCron,
         setup: zhSetup,
+        projects: zhProjects,
+        agents: zhAgents,
     },
     ja: {
         common: jaCommon,
@@ -69,6 +104,8 @@ const resources = {
         skills: jaSkills,
         cron: jaCron,
         setup: jaSetup,
+        projects: jaProjects,
+        agents: jaAgents,
     },
 };
 
@@ -76,12 +113,12 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: 'en', // will be overridden by settings store
+        lng: 'pl', // Polski jako domyślny język
         fallbackLng: 'en',
         defaultNS: 'common',
-        ns: ['common', 'settings', 'dashboard', 'chat', 'channels', 'skills', 'cron', 'setup'],
+        ns: ['common', 'settings', 'dashboard', 'chat', 'channels', 'skills', 'cron', 'setup', 'projects', 'agents'],
         interpolation: {
-            escapeValue: false, // React already escapes
+            escapeValue: false,
         },
         react: {
             useSuspense: false,

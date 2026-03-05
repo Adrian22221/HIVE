@@ -1,6 +1,8 @@
 {
     "sidebar": {
         "chat": "聊天",
+        "projects": "项目",
+        "agents": "AI代理",
         "cronTasks": "定时任务",
         "skills": "技能",
         "channels": "频道",

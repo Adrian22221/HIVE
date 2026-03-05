@@ -1,0 +1,44 @@
+{
+    "title": "Projekty",
+    "description": "Zarządzaj projektami social media",
+    "newProject": "Nowy projekt",
+    "noProjects": "Brak projektów",
+    "noProjectsDesc": "Utwórz swój pierwszy projekt, aby zacząć zarządzać treściami social media.",
+    "createProject": "Utwórz projekt",
+    "editProject": "Edytuj projekt",
+    "deleteProject": "Usuń projekt",
+    "deleteConfirm": "Czy na pewno chcesz usunąć ten projekt?",
+    "created": "Utworzono",
+    "form": {
+        "name": "Nazwa projektu",
+        "namePlaceholder": "np. Marka X — Social Media",
+        "description": "Opis",
+        "descriptionPlaceholder": "Krótki opis projektu...",
+        "workspacePath": "Folder workspace",
+        "workspacePathPlaceholder": "np. C:/Users/Adrian/Documents/Projekty/MarkaX",
+        "publishMode": "Tryb publikacji",
+        "publishModeManual": "Manualny — zatwierdzasz każdą publikację",
+        "publishModeSemiAuto": "Półautomatyczny — zatwierdzasz, agent publikuje",
+        "publishModeAuto": "Pełna automatyzacja — agent działa samodzielnie",
+        "platforms": "Platformy social media",
+        "status": "Status projektu"
+    },
+    "status": {
+        "planning": "Planowanie",
+        "active": "Aktywny",
+        "completed": "Zakończony"
+    },
+    "publishMode": {
+        "manual": "Manualny",
+        "semi-auto": "Półauto",
+        "auto": "Automatyczny"
+    },
+    "platforms": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "twitter": "X (Twitter)",
+        "linkedin": "LinkedIn"
+    }
+}

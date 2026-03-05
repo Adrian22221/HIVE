@@ -1,0 +1,50 @@
+{
+    "title": "Agenci",
+    "description": "Zarządzaj agentami AI",
+    "newAgent": "Nowy agent",
+    "noAgents": "Brak agentów",
+    "noAgentsDesc": "Utwórz swojego pierwszego agenta AI, aby zautomatyzować tworzenie treści social media.",
+    "createAgent": "Utwórz agenta",
+    "editAgent": "Edytuj agenta",
+    "deleteAgent": "Usuń agenta",
+    "deleteConfirm": "Czy na pewno chcesz usunąć tego agenta?",
+    "approveAgent": "Zatwierdź",
+    "pendingApproval": "Oczekuje na zatwierdzenie",
+    "form": {
+        "name": "Nazwa agenta",
+        "namePlaceholder": "np. Agent Treści",
+        "avatar": "Avatar (emoji)",
+        "avatarPlaceholder": "🤖",
+        "role": "Rola",
+        "systemPrompt": "System Prompt",
+        "systemPromptPlaceholder": "Instrukcja dla agenta — opisz jego rolę i zadania...",
+        "provider": "Dostawca AI",
+        "model": "Model AI",
+        "ollamaModel": "Model Ollama",
+        "assignedProject": "Przypisany projekt"
+    },
+    "role": {
+        "orchestrator": "Orkiestrator",
+        "content": "Treści",
+        "graphics": "Grafika",
+        "publisher": "Publikacja",
+        "analytics": "Analityka",
+        "custom": "Własny"
+    },
+    "status": {
+        "idle": "Gotowy",
+        "working": "Pracuje",
+        "waiting": "Czeka",
+        "done": "Gotowe",
+        "error": "Błąd"
+    },
+    "provider": {
+        "anthropic": "Anthropic (Claude)",
+        "openai": "OpenAI (GPT)",
+        "ollama": "Ollama (Lokalny)"
+    },
+    "createdBy": {
+        "user": "Przez użytkownika",
+        "agent": "Przez agenta"
+    }
+}

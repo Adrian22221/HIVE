@@ -1,0 +1,119 @@
+{
+    "steps": {
+        "welcome": {
+            "title": "Witaj w HIVE",
+            "description": "Twój asystent AI jest gotowy do konfiguracji"
+        },
+        "runtime": {
+            "title": "Sprawdzanie środowiska",
+            "description": "Weryfikacja wymagań systemowych"
+        },
+        "provider": {
+            "title": "Dostawca AI",
+            "description": "Skonfiguruj usługę AI"
+        },
+        "channel": {
+            "title": "Połącz kanał",
+            "description": "Połącz platformę komunikacyjną (opcjonalnie)"
+        },
+        "installing": {
+            "title": "Konfigurowanie",
+            "description": "Instalowanie niezbędnych komponentów"
+        },
+        "complete": {
+            "title": "Gotowe!",
+            "description": "HIVE jest gotowy do użycia"
+        }
+    },
+    "welcome": {
+        "title": "Witaj w HIVE",
+        "description": "HIVE to graficzny interfejs dla OpenClaw, który ułatwia korzystanie z asystentów AI na ulubionych platformach komunikacyjnych.",
+        "features": {
+            "noCommand": "Zero wiersza poleceń",
+            "modernUI": "Nowoczesny, piękny interfejs",
+            "bundles": "Wstępnie zainstalowane pakiety umiejętności",
+            "crossPlatform": "Wsparcie wielu platform"
+        }
+    },
+    "runtime": {
+        "title": "Sprawdzanie środowiska",
+        "viewLogs": "Pokaż logi",
+        "recheck": "Sprawdź ponownie",
+        "nodejs": "Środowisko Node.js",
+        "openclaw": "Pakiet OpenClaw",
+        "gateway": "Usługa Gateway",
+        "startGateway": "Uruchom Gateway",
+        "status": {
+            "checking": "Sprawdzanie...",
+            "success": "Node.js jest dostępny",
+            "error": "Błąd",
+            "gatewayRunning": "Działa na porcie {{port}}",
+            "packageReady": "Pakiet OpenClaw gotowy"
+        },
+        "issue": {
+            "title": "Wykryto problem ze środowiskiem",
+            "desc": "Upewnij się że OpenClaw jest poprawnie zainstalowany. Sprawdź logi w celu uzyskania szczegółów."
+        },
+        "logs": {
+            "title": "Logi aplikacji",
+            "openFolder": "Otwórz folder logów",
+            "close": "Zamknij",
+            "noLogs": "(Brak dostępnych logów)"
+        }
+    },
+    "provider": {
+        "label": "Dostawca modelu",
+        "selectPlaceholder": "Wybierz dostawcę...",
+        "baseUrl": "Bazowy URL",
+        "modelId": "ID modelu",
+        "modelIdDesc": "Identyfikator modelu od dostawcy (np. deepseek-ai/DeepSeek-V3)",
+        "apiKey": "Klucz API",
+        "save": "Zapisz",
+        "validateSave": "Zweryfikuj i zapisz",
+        "valid": "Dostawca skonfigurowany pomyślnie",
+        "invalid": "Nieprawidłowy klucz API",
+        "storedLocally": "Twój klucz API jest przechowywany lokalnie na Twoim komputerze."
+    },
+    "channel": {
+        "title": "Połącz kanał komunikacyjny",
+        "subtitle": "Wybierz platformę do połączenia z asystentem AI. Możesz dodać więcej kanałów później w Ustawieniach.",
+        "configure": "Skonfiguruj {{name}}",
+        "howTo": "Jak się połączyć:",
+        "viewDocs": "Zobacz dokumentację",
+        "validationError": "Weryfikacja nie powiodła się",
+        "connected": "{{name}} połączony",
+        "connectedDesc": "Twój kanał został skonfigurowany. Połączy się gdy Gateway zostanie uruchomiony.",
+        "configureAnother": "Skonfiguruj kolejny kanał"
+    },
+    "installing": {
+        "title": "Instalowanie niezbędnych komponentów",
+        "subtitle": "Konfigurowanie narzędzi potrzebnych do zasilenia asystenta AI",
+        "progress": "Postęp",
+        "status": {
+            "pending": "Oczekuje",
+            "installing": "Instalowanie...",
+            "installed": "Zainstalowane",
+            "failed": "Nie powiodło się"
+        },
+        "error": "Błąd konfiguracji:",
+        "restart": "Spróbuj uruchomić aplikację ponownie",
+        "wait": "To może chwilę potrwać...",
+        "skip": "Pomiń ten krok"
+    },
+    "complete": {
+        "title": "Konfiguracja zakończona!",
+        "subtitle": "HIVE jest skonfigurowany i gotowy do użycia. Możesz teraz rozmawiać z asystentem AI.",
+        "provider": "Dostawca AI",
+        "components": "Komponenty",
+        "gateway": "Gateway",
+        "running": "Działa",
+        "footer": "Możesz dostosować umiejętności i połączyć kanały w Ustawieniach"
+    },
+    "nav": {
+        "next": "Dalej",
+        "back": "Wstecz",
+        "skipStep": "Pomiń ten krok",
+        "skipSetup": "Pomiń konfigurację",
+        "getStarted": "Rozpocznij"
+    }
+}
