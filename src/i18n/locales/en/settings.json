@@ -96,6 +96,28 @@
         "errorDetails": "Error Details:",
         "help": "Updates are downloaded in the background and installed when you restart the app."
     },
+    "backup": {
+        "title": "Data Backup",
+        "description": "Export and import agents and projects to a JSON file",
+        "export": "Export",
+        "exportDesc": "Save {{agents}} agents and {{projects}} projects to a JSON file",
+        "exportBtn": "Export Backup",
+        "exporting": "Exporting...",
+        "import": "Import",
+        "importDesc": "Restore agents and projects from a previously saved backup file",
+        "importReplaceBtn": "Import (Replace)",
+        "importMergeBtn": "Import (Merge)",
+        "importing": "Importing...",
+        "replaceWarning": "\"Replace\" mode removes all current agents and projects before importing. Make sure to export first!",
+        "toast": {
+            "exported": "Backup exported successfully",
+            "exportFailed": "Export failed: {{error}}",
+            "importedReplace": "Imported: {{agents}} agents, {{projects}} projects (replaced)",
+            "importedMerge": "Merged: {{agents}} agents, {{projects}} projects",
+            "importFailed": "Import failed: {{error}}",
+            "invalidFile": "Invalid backup file — make sure it's a HIVE backup (.json)"
+        }
+    },
     "advanced": {
         "title": "Advanced",
         "description": "Power-user options",

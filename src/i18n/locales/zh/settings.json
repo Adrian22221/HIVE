@@ -96,6 +96,28 @@
         "errorDetails": "错误详情：",
         "help": "更新将在后台下载，并在您重启应用时安装。"
     },
+    "backup": {
+        "title": "数据备份",
+        "description": "将代理和项目导出/导入为JSON文件",
+        "export": "导出",
+        "exportDesc": "将{{agents}}个代理和{{projects}}个项目保存到JSON文件",
+        "exportBtn": "导出备份",
+        "exporting": "导出中...",
+        "import": "导入",
+        "importDesc": "从之前保存的备份文件中恢复代理和项目",
+        "importReplaceBtn": "导入（替换）",
+        "importMergeBtn": "导入（合并）",
+        "importing": "导入中...",
+        "replaceWarning": "\"替换\"模式会在导入前删除所有当前代理和项目。请先导出备份！",
+        "toast": {
+            "exported": "备份导出成功",
+            "exportFailed": "导出失败: {{error}}",
+            "importedReplace": "已导入: {{agents}}个代理, {{projects}}个项目（已替换）",
+            "importedMerge": "已合并: {{agents}}个代理, {{projects}}个项目",
+            "importFailed": "导入失败: {{error}}",
+            "invalidFile": "无效的备份文件 — 请确保是HIVE备份文件(.json)"
+        }
+    },
     "advanced": {
         "title": "高级",
         "description": "高级选项",

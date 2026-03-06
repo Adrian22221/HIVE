@@ -73,6 +73,9 @@ export function registerIpcHandlers(
   // Dialog handlers
   registerDialogHandlers();
 
+  // Backup handlers (eksport/import danych HIVE)
+  registerBackupHandlers();
+
   // App handlers
   registerAppHandlers();
 
@@ -1389,6 +1392,52 @@ function registerDialogHandlers(): void {
   ipcMain.handle('dialog:message', async (_, options: Electron.MessageBoxOptions) => {
     const result = await dialog.showMessageBox(options);
     return result;
+  });
+}
+
+/**
+ * Backup handlers — eksport i import danych HIVE (agenci, projekty)
+ */
+function registerBackupHandlers(): void {
+  // Eksport: pokazuje dialog zapisu, zapisuje plik JSON
+  ipcMain.handle('backup:export', async (_, jsonString: string, defaultFilename: string) => {
+    const result = await dialog.showSaveDialog({
+      title: 'Eksportuj backup HIVE',
+      defaultPath: defaultFilename,
+      filters: [{ name: 'HIVE Backup', extensions: ['json'] }],
+      properties: ['createDirectory'],
+    });
+
+    if (result.canceled || !result.filePath) {
+      return { success: false, canceled: true };
+    }
+
+    try {
+      writeFileSync(result.filePath, jsonString, 'utf-8');
+      return { success: true, filePath: result.filePath };
+    } catch (err) {
+      return { success: false, error: String(err) };
+    }
+  });
+
+  // Import: pokazuje dialog otwierania, odczytuje i zwraca zawartość pliku JSON
+  ipcMain.handle('backup:import', async () => {
+    const result = await dialog.showOpenDialog({
+      title: 'Importuj backup HIVE',
+      filters: [{ name: 'HIVE Backup', extensions: ['json'] }],
+      properties: ['openFile'],
+    });
+
+    if (result.canceled || result.filePaths.length === 0) {
+      return { success: false, canceled: true };
+    }
+
+    try {
+      const content = readFileSync(result.filePaths[0], 'utf-8');
+      return { success: true, content };
+    } catch (err) {
+      return { success: false, error: String(err) };
+    }
   });
 }
 

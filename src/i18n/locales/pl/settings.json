@@ -96,6 +96,28 @@
         "errorDetails": "Szczegóły błędu:",
         "help": "Aktualizacje są pobierane w tle i instalowane po restarcie aplikacji."
     },
+    "backup": {
+        "title": "Backup danych",
+        "description": "Eksportuj i importuj agentów oraz projekty do pliku JSON",
+        "export": "Eksport",
+        "exportDesc": "Zapisz {{agents}} agentów i {{projects}} projektów do pliku JSON",
+        "exportBtn": "Eksportuj backup",
+        "exporting": "Eksportowanie...",
+        "import": "Import",
+        "importDesc": "Przywróć agentów i projekty z wcześniej zapisanego pliku backup",
+        "importReplaceBtn": "Importuj (zastąp)",
+        "importMergeBtn": "Importuj (scal)",
+        "importing": "Importowanie...",
+        "replaceWarning": "Tryb \"zastąp\" usuwa wszystkich obecnych agentów i projekty przed importem. Najpierw zrób backup!",
+        "toast": {
+            "exported": "Backup wyeksportowany pomyślnie",
+            "exportFailed": "Eksport nie powiódł się: {{error}}",
+            "importedReplace": "Zaimportowano: {{agents}} agentów, {{projects}} projektów (zastąpiono)",
+            "importedMerge": "Scalono: {{agents}} agentów, {{projects}} projektów",
+            "importFailed": "Import nie powiódł się: {{error}}",
+            "invalidFile": "Nieprawidłowy plik backup — upewnij się że to plik HIVE backup (.json)"
+        }
+    },
     "advanced": {
         "title": "Zaawansowane",
         "description": "Opcje dla zaawansowanych użytkowników",

@@ -28,6 +28,10 @@ interface ProjectsState {
   getProject: (id: string) => Project | undefined;
   setProjectStatus: (id: string, status: ProjectStatus) => void;
   setPublishMode: (id: string, mode: PublishMode) => void;
+  /** Zastępuje wszystkie projekty importowanymi danymi */
+  replaceAllProjects: (projects: Project[]) => void;
+  /** Dodaje importowane projekty pomijając duplikaty (po ID) */
+  mergeProjects: (projects: Project[]) => void;
 }
 
 export const useProjectsStore = create<ProjectsState>()(
@@ -83,6 +87,18 @@ export const useProjectsStore = create<ProjectsState>()(
             p.id === id ? { ...p, publishMode: mode } : p
           ),
         }));
+      },
+
+      replaceAllProjects: (projects) => {
+        set({ projects });
+      },
+
+      mergeProjects: (imported) => {
+        set((state) => {
+          const existingIds = new Set(state.projects.map((p) => p.id));
+          const newProjects = imported.filter((p) => !existingIds.has(p.id));
+          return { projects: [...state.projects, ...newProjects] };
+        });
       },
     }),
     {

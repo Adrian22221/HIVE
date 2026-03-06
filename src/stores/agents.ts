@@ -36,6 +36,10 @@ interface AgentsState {
   rejectAgent: (id: string) => void;
   getAgent: (id: string) => Agent | undefined;
   setAgentStatus: (id: string, status: AgentStatus) => void;
+  /** Zastępuje wszystkich agentów importowanymi danymi */
+  replaceAllAgents: (agents: Agent[]) => void;
+  /** Dodaje importowanych agentów pomijając duplikaty (po ID) */
+  mergeAgents: (agents: Agent[]) => void;
 }
 
 export const useAgentsStore = create<AgentsState>()(
@@ -106,6 +110,18 @@ export const useAgentsStore = create<AgentsState>()(
             a.id === id ? { ...a, status } : a
           ),
         }));
+      },
+
+      replaceAllAgents: (agents) => {
+        set({ agents });
+      },
+
+      mergeAgents: (imported) => {
+        set((state) => {
+          const existingIds = new Set(state.agents.map((a) => a.id));
+          const newAgents = imported.filter((a) => !existingIds.has(a.id));
+          return { agents: [...state.agents, ...newAgents] };
+        });
       },
     }),
     {

@@ -14,6 +14,7 @@ import {
   Download,
   Copy,
   FileText,
+  DatabaseBackup,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -28,6 +29,7 @@ import { useGatewayStore } from '@/stores/gateway';
 import { useUpdateStore } from '@/stores/update';
 import { ProvidersSettings } from '@/components/settings/ProvidersSettings';
 import { UpdateSettings } from '@/components/settings/UpdateSettings';
+import { BackupSettings } from '@/components/settings/BackupSettings';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGUAGES } from '@/i18n';
 type ControlUiInfo = {
@@ -407,6 +409,20 @@ export function Settings() {
               }}
             />
           </div>
+        </CardContent>
+      </Card>
+
+      {/* Backup */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <DatabaseBackup className="h-5 w-5" />
+            {t('backup.title')}
+          </CardTitle>
+          <CardDescription>{t('backup.description')}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <BackupSettings />
         </CardContent>
       </Card>
 

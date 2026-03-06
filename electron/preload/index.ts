@@ -128,6 +128,9 @@ const electronAPI = {
         'openclaw:getSkillsDir',
         'openclaw:getCliCommand',
         'openclaw:installCliMac',
+        // Backup — eksport/import danych HIVE
+        'backup:export',
+        'backup:import',
       ];
 
       if (validChannels.includes(channel)) {

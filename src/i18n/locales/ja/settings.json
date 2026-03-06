@@ -75,6 +75,28 @@
         "autoDownload": "自動ダウンロード",
         "autoDownloadDesc": "バックグラウンドで更新をダウンロード"
     },
+    "backup": {
+        "title": "データバックアップ",
+        "description": "エージェントとプロジェクトをJSONファイルにエクスポート・インポート",
+        "export": "エクスポート",
+        "exportDesc": "{{agents}}エージェントと{{projects}}プロジェクトをJSONファイルに保存",
+        "exportBtn": "バックアップをエクスポート",
+        "exporting": "エクスポート中...",
+        "import": "インポート",
+        "importDesc": "以前に保存したバックアップファイルから復元",
+        "importReplaceBtn": "インポート（置換）",
+        "importMergeBtn": "インポート（マージ）",
+        "importing": "インポート中...",
+        "replaceWarning": "「置換」モードはインポート前に現在のすべてのエージェントとプロジェクトを削除します。まずバックアップを取ってください！",
+        "toast": {
+            "exported": "バックアップが正常にエクスポートされました",
+            "exportFailed": "エクスポートに失敗しました: {{error}}",
+            "importedReplace": "インポート完了: {{agents}}エージェント、{{projects}}プロジェクト（置換済み）",
+            "importedMerge": "マージ完了: {{agents}}エージェント、{{projects}}プロジェクト",
+            "importFailed": "インポートに失敗しました: {{error}}",
+            "invalidFile": "無効なバックアップファイルです — HIVEバックアップ(.json)であることを確認してください"
+        }
+    },
     "advanced": {
         "title": "詳細設定",
         "description": "上級ユーザー向けオプション",
